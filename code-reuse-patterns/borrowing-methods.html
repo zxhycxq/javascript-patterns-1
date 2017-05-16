@@ -6,8 +6,11 @@
 	</head>
 	<body>
 		<script>
-			/* Title: Borrowing Methods
-			 Description: reuse one or two methods of an existing object without forming a parent-child relationship with that object
+			/* 描述： Borrowing Methods
+			借用方法
+			 描述：
+			 重用已存在对象的一两个方法，但不想和那个对象构成父子关系。
+			 reuse one or two methods of an existing object without forming a parent-child relationship with that object
 			 */
 
 			function f() {
@@ -16,24 +19,24 @@
 			}
 
 			var one = {
-				name:'object',
+				name:'对象',
 				say:function (greet) {
 					return greet + ', ' + this.name;
 				}
 			};
 
-			// test
-			console.log(one.say('hi')); // "hi, object"
+			// 测试
+			console.log(one.say('嗨')); // "hi, object"
 
 			var two = {
-				name:'another object'
+				name:'另一个对象'
 			};
 			
 			// apply two to original object one.
-			console.log(one.say.apply(two, ['hello'])); // "hello, another object"
+			console.log(one.say.apply(two, ['你好'])); // "hello, another object"
 
 			// assigning to a variable
-			// `this` will point to the global object
+			// `this` will point to the global object   指向全局变量
 			var say = one.say;
 			console.log(say('hoho')); // "hoho, undefined"
 
@@ -57,6 +60,7 @@
 
 
 			// ECMAScript 5 adds a method bind() to Function.prototype, making it just as easy to use as apply() and call().
+			// ECMAScript 5 新增方法bind() to Function.prototype,
 
 			if (typeof Function.prototype.bind === 'undefined') {
 				Function.prototype.bind = function (thisArg) {
@@ -76,7 +80,7 @@
 			console.log(twosay3()); // "Enchanté, another object"
 
 
-			// reference
+			// 参考
 			// http://shop.oreilly.com/product/9780596806767.do
 		</script>
 	</body>

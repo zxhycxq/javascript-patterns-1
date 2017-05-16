@@ -6,8 +6,9 @@
 	</head>
 	<body>
 		<script>
-			/* Title: Classical Pattern #3 - Share the Prototype (a pattern that should be generally avoided)
-			 Description: first borrow the constructor and then also set the child's prototype to point to a new instance of the constructor
+			/* 标题： Classical Pattern #3 - Share the Prototype (a pattern that should be generally avoided)
+			 描述： first borrow the constructor and then
+			 also set the child's prototype to point to a new instance of the constructor
 			 */
 
 			function inherit(C, P) {
@@ -16,7 +17,7 @@
 
 			// the parent constructor
 			function Parent(name) {
-				this.name = name || 'Adam';
+				this.name = name || '亚当';
 			}
 
 			// adding functionality to the prototype
@@ -30,15 +31,15 @@
 
 			inherit(Child, Parent);
 
-			var kid = new Child('Patrick');
+			var kid = new Child('斯密');
 			console.log(kid.name); // undefined
 			console.log(typeof kid.say); // function
-			kid.name = 'Patrick';
+			kid.name = '斯密';
 			console.log(kid.say()); // Patrick
 			console.dir(kid);
 
 
-			// reference
+			// 参考
 			// http://shop.oreilly.com/product/9780596806767.do
 		</script>
 	</body>

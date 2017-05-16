@@ -6,13 +6,12 @@
 	</head>
 	<body>
 		<script>
-			/* Title: Prototypal Inheritance
-			 Description: objects inherit from other objects
+			/* 标题： Prototypal Inheritance
+			 描述： objects inherit from other objects
 			 */
 
 			function object(o) {
-				function F() {
-				}
+				function F() {}
 
 				F.prototype = o;
 				return new F();
@@ -20,7 +19,7 @@
 
 			// object to inherit from
 			var parent = {
-				name:"Papa"
+				name:"哈哈哈"
 			};
 
 			// the new object
@@ -33,7 +32,7 @@
 			// parent constructor
 			function Person() {
 				// an "own" property
-				this.name = "Adam";
+				this.name = "亚达";
 			}
 			// a property added to the prototype
 			Person.prototype.getName = function () {
@@ -51,7 +50,7 @@
 			// parent constructor
 			function Person() {
 				// an "own" property
-				this.name = "Adam";
+				this.name = "亚达";
 			}
 			// a property added to the prototype
 			Person.prototype.getName = function () {
@@ -72,7 +71,7 @@
 			console.log(child.hasOwnProperty("age")); // true
 
 
-			// reference
+			// 参考
 			// http://shop.oreilly.com/product/9780596806767.do
 		</script>
 	</body>

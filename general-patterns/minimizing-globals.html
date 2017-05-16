@@ -6,8 +6,8 @@
 	</head>
 	<body>
 		<script>
-			/* Title: Minimizing Globals
-			 Description: they are declared outside of any function or simply used without being declared
+			/* 标题： Minimizing Globals
+			 描述： they are declared outside of any function or simply used without being declared
 			 */
 
 			myglobal = "hello"; // antipattern
@@ -16,7 +16,7 @@
 			console.log(window["myglobal"]); // "hello"
 			console.log(this.myglobal); // "hello"
 
-			// References
+			// 参考
 			// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
 		</script>
 	</body>

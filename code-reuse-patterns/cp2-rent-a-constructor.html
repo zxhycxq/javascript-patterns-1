@@ -6,8 +6,8 @@
 	</head>
 	<body>
 		<script>
-			/* Title: Classical Pattern #2 - Rent a Constructor (a pattern that should be generally avoided)
-			 Description: it borrows the parent constructor, passing the child object to be bound to this and also forwarding any arguments
+			/* 标题：类模式2 Classical Pattern #2 - Rent a Constructor (a pattern that should be generally avoided)
+			 描述： it borrows the parent constructor, passing the child object to be bound to this and also forwarding any arguments
 			 */
 
 			// the parent constructor
@@ -28,14 +28,14 @@
 			var kid = new Child("Patrick");
 			console.log(kid.name); // "Patrick"
 
-			// Drawback 1: nothing from the prototype gets inherited
+			// 缺点 1: nothing from the prototype gets inherited
 			console.log(typeof kid.say); // "undefined"
 
-			// Multiple Inheritance by Borrowing Constructors
+			// Multiple Inheritance by Borrowing Constructors     借用构造函数的多重继承
 			function Cat() {
 				this.legs = 4;
 				this.say = function () {
-					return "meaowww";
+					return "喵喵";
 				}
 			}
 
@@ -51,9 +51,10 @@
 
 			var jane = new CatWings();
 			console.dir(jane);
+			console.log(jane.say());
 
 
-			// reference
+			// 参考
 			// http://shop.oreilly.com/product/9780596806767.do
 		</script>
 	</body>

@@ -6,17 +6,18 @@
 	</head>
 	<body>
 		<script>
-			/* Title: Classical Pattern #1 - The Default Pattern (a pattern that should be generally avoided)
-			 Description: create an object using the Parent() constructor and assign this object to the Child()'s prototype
+			/* 标题：类模式 Classical Pattern #1 - The Default Pattern (a pattern that should be generally avoided)默认模式，通常避免
+			 描述： create an object using the Parent() constructor and assign this object to the Child()'s prototype
+			 用父构造器创建对象，注册这个对象到子对象的原型上
 			 */
 
 			function inherit(C, P) {
 				C.prototype = new P();
 			}
 
-			// the parent constructor
+			// the parent constructor   父构造函数
 			function Parent(name) {
-				this.name = name || 'Adam';
+				this.name = name || '管理员';
 			}
 			// adding functionality to the prototype
 			Parent.prototype.say = function () {
@@ -32,18 +33,21 @@
 			var kid = new Child();
 			console.log(kid.say()); // "Adam"
 
-			// Drawback 1: own properties added to `this` is inherited
+			// 缺点 1: own properties added to `this` is inherited
 			var kiddo = new Child();
 			kiddo.name = "Patrick";
-			console.log(kiddo.say()); // "Patrick"
+			var qw = new Child();
+			qw.name = "qw12";
+			console.log(qw.say()); // "Patrick"
 
 
-			// Drawback 2: it doesn't enable you to pass parameters to the child constructor
+			// 缺点 2: it doesn't enable you to pass parameters to the child constructor
+//      对字构造函数来说，不允许你传参
 			var s = new Child('Seth');
 			console.log(s.say()); // "Adam"
 
 
-			// reference
+			// 参考
 			// http://shop.oreilly.com/product/9780596806767.do
 		</script>
 	</body>

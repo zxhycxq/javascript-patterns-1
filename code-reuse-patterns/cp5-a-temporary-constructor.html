@@ -6,11 +6,11 @@
 	</head>
 	<body>
 		<script>
-			/* Title: Classical Pattern #5 - A Temporary Constructor (a pattern that should be generally avoided)
-			 Description: first borrow the constructor and then also set the child's prototype to point to a new instance of the constructor
+			/* 标题： Classical Pattern #5 - A Temporary Constructor (a pattern that should be generally avoided)
+			 描述： first borrow the constructor and then also set the child's prototype to point to a new instance of the constructor
 			 */
 
-			/* Basic */
+			/* 基础版 */
 			/*function inherit(C, P) {
 			 var F = function () {};
 			 F.prototype = P.prototype;
@@ -36,8 +36,7 @@
 
 			/* in closure */
 			var inherit = (function () {
-				var F = function () {
-				};
+				var F = function () {};
 				return function (C, P) {
 					F.prototype = P.prototype;
 					C.prototype = new F();
@@ -47,7 +46,7 @@
 			}());
 
 			function Parent(name) {
-				this.name = name || 'Adam';
+				this.name = name || '亚当';
 			}
 
 			// adding functionality to the prototype
@@ -64,13 +63,13 @@
 			var kid = new Child();
 			console.log(kid.name); // undefined
 			console.log(typeof kid.say); // function
-			kid.name = 'Patrick';
+			kid.name = '夏娃';
 			console.log(kid.say()); // Patrick
 			console.log(kid.constructor.name); // Child
 			console.log(kid.constructor === Parent); // false
 
 
-			// reference
+			// 参考
 			// http://shop.oreilly.com/product/9780596806767.do
 		</script>
 	</body>
